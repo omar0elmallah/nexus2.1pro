@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ربط HTML مع Flask</title>
+</head>
+<body>
+  <h1>نتيجة الاتصال بـ Flask</h1>
+  <p id="response">...جاري الاتصال</p>
+
+  <script>
+    fetch("https://replit.com/@omarelmallah201/my-flask-app-1?v=1#app.py")  // ← حط رابط Flask هنا
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("response").innerText = data;
+      })
+      .catch(error => {
+        document.getElementById("response").innerText = "حدث خطأ: " + error;
+      });
+  </script>
+</body>
+</html>
 
